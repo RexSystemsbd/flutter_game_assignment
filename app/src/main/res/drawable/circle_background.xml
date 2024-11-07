@@ -1,0 +1,17 @@
+<!-- res/drawable/circle_background.xml -->
+<!--
+<shape xmlns:android="http://schemas.android.com/apk/res/android"
+    android:shape="oval">
+    <solid android:color="#FF0000"/> &lt;!&ndash; বোতামের ব্যাকগ্রাউন্ড রঙ (লাল) &ndash;&gt;
+    <size
+        android:width="50dp"
+        android:height="50dp"/>
+</shape>
+-->
+
+<shape xmlns:android="http://schemas.android.com/apk/res/android">
+    <solid android:color="@android:color/background_light" />
+    <size android:width="50dp" android:height="50dp" />
+    <corners android:radius="25dp" />
+</shape>
+

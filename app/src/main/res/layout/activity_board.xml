@@ -1,0 +1,46 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:padding="10dp"
+    android:background="#FFEB3B">
+
+    <!-- Invisible Game Board TextView -->
+    <TextView
+        android:id="@+id/gameBoardTextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="20dp"
+        android:text="Game Board"
+        android:textAlignment="center"
+        android:textSize="30sp"
+        android:textStyle="bold"
+        android:visibility="visible" />
+
+    <!-- Invisible Reset Button -->
+    <Button
+        android:id="@+id/resetButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/gameBoardTextView"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="10dp"
+        android:text="Reset Game"
+        android:textSize="20sp"
+        android:visibility="visible" />
+
+    <!-- Game Board Grid -->
+    <GridLayout
+        android:id="@+id/gameBoardGrid"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@id/resetButton"
+        android:layout_marginTop="150dp"
+        android:background="#6D8EA2"
+        android:columnCount="6"
+        android:rowCount="7"
+        android:gravity="center"
+        android:padding="8dp">
+    </GridLayout>
+
+</RelativeLayout>

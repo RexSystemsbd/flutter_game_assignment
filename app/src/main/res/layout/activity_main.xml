@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#fffb37"
+    tools:context=".MainActivity">
+
+    <Button
+        android:id="@+id/connect_four_button"
+        android:layout_width="315dp"
+        android:layout_height="65dp"
+        android:layout_centerHorizontal="true"
+        android:background=""
+        android:text="@string/connect_four"
+        android:letterSpacing="0.04"
+        android:textAllCaps="false"
+        android:textColor="@color/black"
+        android:textSize="34sp"
+        android:textStyle="bold"
+        android:visibility="visible"
+        tools:ignore="MissingConstraints"
+        tools:layout_editor_absoluteX="48dp"
+        tools:layout_editor_absoluteY="291dp" />
+
+    <Button
+        android:id="@+id/option_button"
+        android:layout_width="214dp"
+        android:layout_height="53dp"
+        android:background=""
+        android:text="@string/options"
+        android:letterSpacing="0.05"
+        android:textColor="@color/black"
+        android:textSize="28sp"
+        android:textStyle="bold"
+        android:visibility="visible"
+        tools:ignore="MissingConstraints"
+        tools:layout_editor_absoluteX="98dp"
+        tools:layout_editor_absoluteY="377dp" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
