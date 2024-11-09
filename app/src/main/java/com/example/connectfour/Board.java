@@ -4,7 +4,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.GridLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
-public class BoardActivity extends AppCompatActivity {
+public class Board extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {

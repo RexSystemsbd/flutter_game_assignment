@@ -3,6 +3,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="#FFEB3B"
+    android:layout_margin="10dp"
     android:orientation="vertical">
 
     <!-- Centered TextView and Button at the top -->
@@ -38,8 +39,7 @@
         android:id="@+id/recyclerView"
         android:layout_width="match_parent"
         android:layout_height="659dp"
-        android:background="#4E6D6D"
-        android:layout_marginTop="200dp"
+        android:layout_marginTop="180dp"
         android:paddingLeft="35dp"
         android:paddingRight="35dp"
         />

@@ -13,10 +13,10 @@
         android:theme="@style/Theme.ConnectFour"
         tools:targetApi="31">
         <activity
-            android:name=".GameOptionsActivity"
+            android:name=".GameOptions"
             android:exported="true" />
         <activity
-            android:name=".BoardActivity"
+            android:name=".Board"
             android:exported="true" />
         <activity
             android:name=".MainActivity"
