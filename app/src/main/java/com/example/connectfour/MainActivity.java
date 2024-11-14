@@ -1,14 +1,10 @@
 package com.example.connectfour;
-
 import android.os.Bundle;
 import android.util.Log;
 import androidx.appcompat.widget.Toolbar;
-
-import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.fragment.app.Fragment;
 import androidx.navigation.NavController;
-import androidx.navigation.Navigation;
 import androidx.navigation.fragment.NavHostFragment;
 import androidx.navigation.ui.AppBarConfiguration;
 import androidx.navigation.ui.NavigationUI;
@@ -54,9 +50,6 @@ public class MainActivity extends AppCompatActivity {
             // Link BottomNavigationView with NavController
             NavigationUI.setupWithNavController(bottomNavigationView, navController);
 
-//        } else {
-//            Log.e(TAG, "NavHostFragment is null.");
-//        }
     }
 
     @Override
