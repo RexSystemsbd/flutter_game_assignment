@@ -7,18 +7,14 @@
     android:orientation="vertical">
 
 
-
-
-
     <!-- GridLayout for game buttons -->
     <GridLayout
         android:id="@+id/gridLayout"
         android:layout_width="match_parent"
         android:layout_height="632dp"
-        android:layout_marginTop="1dp"
+        android:layout_marginTop="150dp"
         android:columnCount="6"
-        android:paddingLeft="1dp"
-        android:paddingRight="1dp"
+        android:padding="2dp"
         android:rowCount="7"
         android:useDefaultMargins="true"></GridLayout>
 

@@ -18,16 +18,16 @@
             android:id="@+id/textView2"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_centerHorizontal="true"
             android:layout_alignParentTop="true"
+            android:layout_centerHorizontal="true"
+            android:gravity="center"
+            android:paddingLeft="70dp"
             android:paddingTop="30dp"
-            android:paddingLeft="90dp"
             android:paddingBottom="15dp"
             android:text="@string/select_difficulty"
-            android:textSize="30sp"
             android:textAlignment="center"
-            android:gravity="center"
-            android:textStyle="normal"/>
+            android:textSize="30sp"
+            android:textStyle="normal" />
 
         <LinearLayout
             android:layout_width="match_parent"
