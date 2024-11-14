@@ -1,70 +1,68 @@
 package com.example.connectfour;
-import android.content.Intent;
-import android.os.Bundle;
-import android.view.View;
-import android.widget.Button;
-import android.widget.TextView;
-import android.widget.Toast;
 
-import androidx.activity.EdgeToEdge;
-import androidx.activity.result.ActivityResultLauncher;
-import androidx.activity.result.contract.ActivityResultContracts;
+import android.os.Bundle;
+import android.util.Log;
+import androidx.appcompat.widget.Toolbar;
+
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
-import androidx.core.graphics.Insets;
-import androidx.core.view.ViewCompat;
-import androidx.core.view.WindowInsetsCompat;
+import androidx.fragment.app.Fragment;
+import androidx.navigation.NavController;
+import androidx.navigation.Navigation;
+import androidx.navigation.fragment.NavHostFragment;
+import androidx.navigation.ui.AppBarConfiguration;
+import androidx.navigation.ui.NavigationUI;
+import com.google.android.material.bottomnavigation.BottomNavigationView;
 
 public class MainActivity extends AppCompatActivity {
 
-    private ActivityResultLauncher<Intent> optionsLauncher;
+    private static final String TAG = "MainActivity";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        EdgeToEdge.enable(this);
         setContentView(R.layout.activity_main);
 
-        // Set padding for system insets
-        ViewCompat.setOnApplyWindowInsetsListener(findViewById(R.id.main), (v, insets) -> {
-            Insets systemBars = insets.getInsets(WindowInsetsCompat.Type.systemBars());
-            v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom);
-            return insets;
-        });
+        Toolbar toolbar = findViewById(R.id.toolbar);
+        setSupportActionBar(toolbar);
+        // Initialize BottomNavigationView with log statement
+        BottomNavigationView bottomNavigationView = findViewById(R.id.bottomNavigationView);
+        if (bottomNavigationView != null) {
+            Log.d(TAG, "BottomNavigationView initialized successfully.");
+        } else {
+            Log.e(TAG, "BottomNavigationView is null. Check the ID in activity_main.xml.");
+        }
 
-        // Initialize buttons
-        Button connectFourButton = findViewById(R.id.connect_btn);
-        Button optionsButton = findViewById(R.id.options_btn);
+        // Initialize NavHostFragment with log statement
+        Fragment fragment = getSupportFragmentManager().findFragmentById(R.id.nav_host_fragment);
+        NavController navController = ((NavHostFragment) fragment).getNavController();
 
-        // Initialize the ActivityResultLauncher
-        optionsLauncher = registerForActivityResult(
-                new ActivityResultContracts.StartActivityForResult(),
-                result -> {
-                    if (result.getResultCode() == RESULT_OK && result.getData() != null) {
-                        String difficulty = result.getData().getStringExtra("selected_difficulty");
+//        NavHostFragment navHostFragment = (NavHostFragment) getSupportFragmentManager().findFragmentById(R.id.nav_host_fragment);
+//        if (navHostFragment != null) {
+            Log.d(TAG, "NavHostFragment initialized successfully.");
+//            NavController navController = navHostFragment.getNavController();
 
-                        // Inflate custom toast layout
-                        View customToastView = getLayoutInflater().inflate(R.layout.custom_toast, null);
-                        TextView toastText = customToastView.findViewById(R.id.toastText);
-                        toastText.setText(difficulty + " Mode");
+            // AppBarConfiguration setup
+            AppBarConfiguration appBarConfiguration = new AppBarConfiguration.Builder(
+                    R.id.navigation_connect_four, R.id.navigation_options
+            ).build();
 
-                        // Create and show the custom Toast
-                        Toast toast = new Toast(this);
-                        toast.setDuration(Toast.LENGTH_SHORT);
-                        toast.setView(customToastView);
-                        toast.show();
-                }}
-        );
 
-        // Set onClickListener to open Board activity
-        connectFourButton.setOnClickListener(view -> {
-            Intent intent = new Intent(MainActivity.this, Board.class);
-            startActivity(intent);
-        });
+            // Link ActionBar with NavController
+            NavigationUI.setupActionBarWithNavController(this, navController, appBarConfiguration);
 
-        // Set onClickListener to open GameOptions Activity
-        optionsButton.setOnClickListener(view -> {
-            Intent intent = new Intent(MainActivity.this, GameOptions.class);
-            optionsLauncher.launch(intent);
-        });
+            // Link BottomNavigationView with NavController
+            NavigationUI.setupWithNavController(bottomNavigationView, navController);
+
+//        } else {
+//            Log.e(TAG, "NavHostFragment is null.");
+//        }
+    }
+
+    @Override
+    public boolean onSupportNavigateUp() {
+        NavController navController = ((NavHostFragment) getSupportFragmentManager()
+                .findFragmentById(R.id.nav_host_fragment)).getNavController();
+        return navController.navigateUp() || super.onSupportNavigateUp();
     }
 }

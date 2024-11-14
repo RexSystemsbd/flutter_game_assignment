@@ -1,52 +1,41 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="#FFEB3B"
-    android:padding="15dp"
-    android:layout_margin="10dp"
-    android:orientation="horizontal">
-
+    tools:context=".GameOptionsFragment"
+    android:layout_margin="25dp">
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:orientation="vertical"
-        android:gravity="top"
-        tools:ignore="UselessParent">
-
-        <TextView
-            android:id="@+id/textView3"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:paddingVertical="20dp"
-            android:text="@string/options_small"
-            android:textAlignment="center"
-            android:textSize="30sp"
-            android:textStyle="bold"
-            android:typeface="normal"
-            android:visibility="invisible"/>
+        android:gravity="top">
 
         <TextView
             android:id="@+id/textView2"
-            android:layout_width="match_parent"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="@string/select_difficulty"
+            android:layout_centerHorizontal="true"
+            android:layout_alignParentTop="true"
             android:paddingTop="30dp"
+            android:paddingLeft="90dp"
             android:paddingBottom="15dp"
-            android:textAlignment="center"
+            android:text="@string/select_difficulty"
             android:textSize="30sp"
-            android:typeface="normal" />
+            android:textAlignment="center"
+            android:gravity="center"
+            android:textStyle="normal"/>
 
-        <!-- Wrapper LinearLayout to center the RadioGroup -->
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:gravity="center">
 
             <RadioGroup
-                android:id="@+id/difficultyRadioGroup"
+                android:id="@+id/radioGroupDifficulty"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:orientation="vertical">
@@ -56,7 +45,6 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="@string/easy"
-                    android:textColor="@color/black"
                     android:textSize="18sp" />
 
                 <RadioButton
@@ -64,7 +52,6 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="@string/medium"
-                    android:textColor="@color/black"
                     android:textSize="18sp" />
 
                 <RadioButton
@@ -72,16 +59,8 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="@string/hard"
-                    android:textColor="@color/black"
                     android:textSize="18sp" />
-
             </RadioGroup>
         </LinearLayout>
-
     </LinearLayout>
-
-
-
-
-
 </RelativeLayout>

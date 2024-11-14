@@ -31,8 +31,15 @@ android {
     }
 }
 
-dependencies {
+//buildFeatures{
+//    viewBinding true
+//}
 
+
+dependencies {
+    implementation("androidx.navigation:navigation-fragment:2.3.5")
+    implementation("androidx.navigation:navigation-ui:2.3.5")
+    implementation("androidx.fragment:fragment-ktx:1.3.5")
     implementation(libs.appcompat)
     implementation(libs.material)
     implementation(libs.activity)
@@ -40,4 +47,5 @@ dependencies {
     testImplementation(libs.junit)
     androidTestImplementation(libs.ext.junit)
     androidTestImplementation(libs.espresso.core)
+
 }
