@@ -50,7 +50,9 @@ public class BoardFragment extends Fragment {
                 FloatingActionButton button = new FloatingActionButton(requireContext());
                 GridLayout.LayoutParams params = (GridLayout.LayoutParams) button.getLayoutParams();
                 button.setOnClickListener(this::onButtonClick);
-                mGrid.addView(button,params);
+                button.setLayoutParams(new GridLayout.LayoutParams());
+                mGrid.addView(button);
+
             }
         }
     }
